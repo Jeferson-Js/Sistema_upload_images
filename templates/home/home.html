@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+{% block title %}Home{% endblock %}
+<section class="min-h-screen flex justify-center items-center">
+    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="my_file">
+        <input type="submit" value="upload" class=" bg-green-400 hover:bg-green-500 duration-700 py-1 px-6 rounded-lg capitalize text-white cursor-pointer shadow-lg">
+    </form>
+</section>
+{% endblock %}
